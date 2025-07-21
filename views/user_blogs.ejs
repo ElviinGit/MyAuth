@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <% if (userBlog && userBlog.length > 0) { %>
+    <h2>Here are your blogs:</h2>
+    <% userBlog.forEach(blog => { %>
+      <div style="margin-bottom: 1em;">
+        <p><strong>Author:</strong> <%= blog.author %></p>
+        <p><strong>Title:</strong> <%= blog.title %></p>
+        <p><strong>Content:</strong> <%= blog.content %></p>
+      </div>
+    <% }) %>
+  <% } else { %>
+    <h1 style="text-align: center;">You Did Not Create Any Blog Yet</h1>
+  <% } %>
+
+  <form action="/create" method="get">
+    <button type="submit">Create Blog</button>
+  </form>
+</body>
+</html>

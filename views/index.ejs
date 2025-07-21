@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Login</h1>
+    <form action="/login" method="post">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+    <button type="submit">Sign In</button>
+    </form>
+
+    <h1>Register</h1>
+    <form id="register-form" action="/register" method="post">
+        <label for="new_username">New Username</label>
+        <input type="text" name="new_username" id="new_username" required>
+        <label for="new_password">Password</label>
+        <input type="password" name="new_password" id="new_password" required>
+        <label for="new_password_again">Password Again</label>
+        <input type="password" name="new_password_again" id="new_password_again" required>
+        <button type="submit">Sign Up</button>
+    </form>
+    </div>
+    <script>
+        document.getElementById("register-form").addEventListener("submit", function(e) {
+            const pw1input = document.getElementById("new_password").value 
+            const pw2input = document.getElementById("new_password_again").value
+            if (pw1input !== pw2input){
+                 alert("Password do not match") 
+                 e.preventDefault();
+            }           
+            else {
+                console.log("everything is ok")
+            }
+        })
+        
+
+    </script>
+</body>
+</html>
