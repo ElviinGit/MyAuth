@@ -62,7 +62,10 @@ if (foundUser) {
 
 //excited user_list in user interface
 app.get("/secret", (req,res) => {
-  res.render("secret.ejs", {userList: user, blogList: all_blogs})
+  let a = 3
+  let my_html_script = "<h1 style='color: blue;'>Hello world </h1>"
+  res.render("secret.ejs", {userList: user, blogList: all_blogs, a, my_html_script})
+  console.log("Shit happened")
 })
 // logged-in user dashboard
 app.get("/create", check_login, (req, res, next) => {
